@@ -4,9 +4,10 @@
 
 % To test the function 
 
-ro=0:1;
+ro=0:5;
 vo = vol(ro);
 vo2 = vol_v(ro);
+vo3 = vol_flip(ro);
 
 % With for loop
 function v = vol(r)
@@ -19,4 +20,11 @@ end
 % With vector operation
 function v = vol_v(r)
         v = 4/3 * pi * r.^3;
+end
+
+% Reversed volume calculation
+% With vector operation
+function v = vol_flip(r)
+    rf = fliplr(r);
+    v = 4/3 * pi * rf.^3;
 end
